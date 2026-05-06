@@ -2,6 +2,12 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.hf-button-logo {
+  display: block;
+  width: 1.1em;
+  height: 1.1em;
+}
+
 
 .footer .icon-link {
     font-size: 25px;
