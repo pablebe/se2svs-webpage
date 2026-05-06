@@ -25,7 +25,9 @@
 
 
   <title>Teaching Speech Enhancement Models to Sing: Domain Adaptation from Speech Enhancement to Singing Voice Separation</title>
-  <link rel="icon" type="image/x-icon" href="static/images/iemlogo_blau.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-touch-icon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="static/images/iemlogo_blau.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -69,7 +71,7 @@
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>Institute of Electronic Music and Acoustics (IEM), University of Music and Performing Arts, Graz, Austria<br><sup>2</sup>Departement for Informatics, King's College London, London, UK<br>To be presented in 2026</span>
+                    <span class="author-block"><sup>1</sup>Institute of Electronic Music and Acoustics (IEM), University of Music and Performing Arts, Graz, Austria<br><sup>2</sup>Departement for Informatics, King's College London, London, UK<br>To be presented at _____  in 2026</span>
                     <span class="eql-cntrb"></span>
                   </div>
 
@@ -165,7 +167,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-State-of-the-art speech enhancement (SE) models benefit from large-scale labeled datasets, whereas singing voice separation (SVS) models suffer from limited available training data. To address this limitation, we formulate singing voice separation as domain adaptation from speech enhancement to singing voice separation. We investigate two fine-tuning strategies: full fine-tuning and parameter-efficient fine-tuning using Low-Rank Adaptation (LoRA) on a generative and a discriminative model. Models with either adaptation strategy outperform the same architectures trained from scratch by 0.2-1.8 dB in Signal-to-Distortion-Ratio (SDR). Full fine-tuning yields highest singing voice separation performance, but catastrophic forgetting degrades speech enhancement performance. LoRA fine-tuning achieves competitive SVS performance while preserving the original speech enhancement capability with only 6-12% additional parameters compared to the base speech enhancement model. Furthermore, the generative model shows improved generalization to an unseen test set. The results demonstrate that adapting pretrained speech enhancement models for singing voice separation is an effective strategy for training SVS models in data-scarce scenarios.
+State-of-the-art speech enhancement (SE) models benefit from large-scale labeled datasets, whereas singing voice separation (SVS) models suffer from limited available training data. To address this limitation, we formulate singing voice separation as domain adaptation from speech enhancement to singing voice separation. We investigate two fine-tuning strategies: full fine-tuning and parameter-efficient fine-tuning using Low-Rank Adaptation (LoRA) on a generative and a discriminative model. Models with either adaptation strategy outperform the same architectures trained from scratch by 0.2-1.8 dB in Signal-to-Distortion-Ratio (SDR). Full fine-tuning yields highest singing voice separation performance, but catastrophic forgetting degrades speech enhancement performance. LoRA fine-tuning achieves competitive singing voice separation performance while preserving the original speech enhancement capability with only 6-12% additional parameters compared to the base speech enhancement model. Furthermore, the generative model shows improved generalization to an unseen test set. The results demonstrate that adapting pretrained speech enhancement models is an effective strategy for training singing voice separation models in data-scarce scenarios.
           </p>
         </div>
       </div>
@@ -179,15 +181,13 @@ State-of-the-art speech enhancement (SE) models benefit from large-scale labeled
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Audio Examples</h2>
-    <div class="table-container">
-      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
-    <p class="has-text-centered" style="margin-bottom: 2rem;">Selected audio samples from the evaluation datasets. All samples are 16-bit PCM WAV format.</p>
+    <p class="has-text-centered" style="margin-bottom: 2rem;">The audio examples on this webpage accompany our paper titled "Teaching Speech Enhancement Models to Sing: Domain Adaptation from Speech Enhancement to Singing Voice Separation" presented at _____ in 2026. The audio audible here is the output of models that were trained with from scratch training, LoRA, or full fine-tuning for the task of singing voice separation. Only the base model and the LoRA model with disabled adapter, which is effectively the base speech enhancement model, are models trained only for speech enhancement.</p>
 
     <!-- GenSVS Dataset -->
-    <h3 class="title is-4">GenSVS Dataset</h3>
+    <h3 class="title is-4">Singing Voice Separation: GenSVS test set [1]</h3>
     <div class="table-container">
       <table class="table is-bordered is-hoverable is-fullwidth">
-        <caption>GenSVS model outputs for selected samples across all models.</caption>
+        <caption></caption>
         <thead>
           <tr>
             <th style="border: none;"></th>
@@ -206,21 +206,21 @@ State-of-the-art speech enhancement (SE) models benefit from large-scale labeled
           <tr><td>LoRA (rank 128)</td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_lora_r128/mixture_fileid_1_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_lora_r128/mixture_fileid_35_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_lora_r128/mixture_fileid_42_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>From scratch</td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_scratch/mixture_fileid_1_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_scratch/mixture_fileid_35_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_scratch/mixture_fileid_42_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>LoRA (rank 16)<br>(adapter disabled)</td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_lora_r16_no_lora/mixture_fileid_1_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_lora_r16_no_lora/mixture_fileid_35_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_lora_r16_no_lora/mixture_fileid_42_separated.wav" type="audio/wav"></audio></td></tr>
-          <tr><td>Base</td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_base/mixture_fileid_1_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_base/mixture_fileid_35_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_base/mixture_fileid_42_separated.wav" type="audio/wav"></audio></td></tr>
+          <tr><td>Base [2]</td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_base/mixture_fileid_1_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_base/mixture_fileid_35_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/bsrnn_base/mixture_fileid_42_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td rowspan="5" style="vertical-align: middle; text-align: center; font-weight: bold;">SGM</td><td>Full fine-tuning</td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_full/mixture_fileid_1_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_full/mixture_fileid_35_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_full/mixture_fileid_42_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>LoRA (rank 16)</td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_lora_r16/mixture_fileid_1_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_lora_r16/mixture_fileid_35_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_lora_r16/mixture_fileid_42_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>From scratch</td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_scratch/mixture_fileid_1_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_scratch/mixture_fileid_35_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_scratch/mixture_fileid_42_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>LoRA (rank 16)<br>(adapter disabled)</td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_lora_r16_no_lora/mixture_fileid_1_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_lora_r16_no_lora/mixture_fileid_35_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_lora_r16_no_lora/mixture_fileid_42_separated.wav" type="audio/wav"></audio></td></tr>
-          <tr><td>Base</td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_base/mixture_fileid_1_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_base/mixture_fileid_35_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_base/mixture_fileid_42_separated.wav" type="audio/wav"></audio></td></tr>
+          <tr><td>Base [3]</td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_base/mixture_fileid_1_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_base/mixture_fileid_35_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/gensvs/sgm_base/mixture_fileid_42_separated.wav" type="audio/wav"></audio></td></tr>
         </tbody>
       </table>
     </div>
 
     <!-- MSRBench Dataset -->
-    <h3 class="title is-4" style="margin-top: 2rem;">MSRBench Dataset</h3>
+    <h3 class="title is-4" style="margin-top: 2rem;">Singing Voice Restoration: MSRBench test set [4]</h3>
     <div class="table-container">
       <table class="table is-bordered is-hoverable is-fullwidth">
-        <caption>MSRBench model outputs for selected samples across all models.</caption>
+        <caption></caption>
         <thead>
           <tr>
             <th style="border: none;"></th>
@@ -239,21 +239,21 @@ State-of-the-art speech enhancement (SE) models benefit from large-scale labeled
           <tr><td>LoRA (rank 128)</td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_lora_r128/240_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_lora_r128/198_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_lora_r128/78_DT0_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>From scratch</td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_scratch/240_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_scratch/198_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_scratch/78_DT0_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>LoRA (rank 16)<br>(adapter disabled)</td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_lora_r16_no_lora/240_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_lora_r16_no_lora/198_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_lora_r16_no_lora/78_DT0_separated.wav" type="audio/wav"></audio></td></tr>
-          <tr><td>Base</td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_base/240_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_base/198_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_base/78_DT0_separated.wav" type="audio/wav"></audio></td></tr>
+          <tr><td>Base [2]</td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_base/240_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_base/198_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/bsrnn_base/78_DT0_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td rowspan="5" style="vertical-align: middle; text-align: center; font-weight: bold;">SGM</td><td>Full fine-tuning</td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_full/240_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_full/198_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_full/78_DT0_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>LoRA (rank 16)</td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_lora_r16/240_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_lora_r16/198_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_lora_r16/78_DT0_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>From scratch</td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_scratch/240_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_scratch/198_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_scratch/78_DT0_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>LoRA (rank 16)<br>(adapter disabled)</td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_lora_r16_no_lora/240_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_lora_r16_no_lora/198_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_lora_r16_no_lora/78_DT0_separated.wav" type="audio/wav"></audio></td></tr>
-          <tr><td>Base</td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_base/240_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_base/198_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_base/78_DT0_separated.wav" type="audio/wav"></audio></td></tr>
+          <tr><td>Base [3]</td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_base/240_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_base/198_DT0_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/msrbench/sgm_base/78_DT0_separated.wav" type="audio/wav"></audio></td></tr>
         </tbody>
       </table>
     </div>
 
     <!-- EARS Dataset -->
-    <h3 class="title is-4" style="margin-top: 2rem;">EARS Dataset</h3>
+    <h3 class="title is-4" style="margin-top: 2rem;">Speech Enhancement: EARS-WHAM test set [4]</h3>
     <div class="table-container">
       <table class="table is-bordered is-hoverable is-fullwidth">
-        <caption>EARS model outputs for selected samples across available models.</caption>
+        <caption></caption>
         <thead>
           <tr>
             <th style="border: none;"></th>
@@ -266,16 +266,18 @@ State-of-the-art speech enhancement (SE) models benefit from large-scale labeled
         <tbody>
           <tr><td colspan="2">Mixture</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/mixture/p102/00007_-0.4dB.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/mixture/p105/00164_-2.2dB.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/mixture/p104/00749_-2.1dB.wav" type="audio/wav"></audio></td></tr>
           <tr><td colspan="2">Target</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/target/p102/00007.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/target/p105/00164.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/target/p104/00749.wav" type="audio/wav"></audio></td></tr>
-          <tr><td rowspan="5" style="vertical-align: middle; text-align: center; font-weight: bold;">BSRNN</td><td>LoRA (rank 16)</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r16/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r16/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r16/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
+          <tr><td rowspan="7" style="vertical-align: middle; text-align: center; font-weight: bold;">BSRNN</td><td>Full fine-tuning</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_full/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_full/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_full/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
+          <tr><td>LoRA (rank 16)</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r16/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r16/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r16/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>LoRA (rank 32)</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r32/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r32/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r32/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>LoRA (rank 128)</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r128/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r128/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r128/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>From scratch</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_scratch/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_scratch/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_scratch/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>LoRA (rank 16)<br>(adapter disabled)</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r16_no_lora/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r16_no_lora/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_lora_r16_no_lora/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
+          <tr><td>Base [2]</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_base/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_base/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/bsrnn_base/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td rowspan="5" style="vertical-align: middle; text-align: center; font-weight: bold;">SGM</td><td>Full fine-tuning</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_full/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_full/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_full/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>LoRA (rank 16)</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_lora_r16/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_lora_r16/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_lora_r16/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>From scratch</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_scratch/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_scratch/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_scratch/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
           <tr><td>LoRA (rank 16)<br>(adapter disabled)</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_lora_r16_no_lora/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_lora_r16_no_lora/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_lora_r16_no_lora/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
-          <tr><td>Base</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_base/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_base/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_base/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
+          <tr><td>Base [3]</td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_base/p102/00007_-0.4dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_base/p105/00164_-2.2dB_separated.wav" type="audio/wav"></audio></td><td><audio controls style="width: 150px;"><source src="static/audio/ears/sgm_base/p104/00749_-2.1dB_separated.wav" type="audio/wav"></audio></td></tr>
         </tbody>
       </table>
   </div>
@@ -287,6 +289,12 @@ State-of-the-art speech enhancement (SE) models benefit from large-scale labeled
     <div class="container">
       <h2 class="title has-text-centered">Results</h2>
       <div id="results-carousel" class="carousel results-carousel">
+        <div class="item has-text-centered">
+          <img src="static/images/se2svs_results_tradeoff_plot_A4.png" alt="Trade-off Plot" style="width: 100%;">
+          <h2 class="subtitle has-text-centered">
+            Tradeoff between MERT-MSE and PESQ evaluated for speech enhancement on the EARS-WHAM test set. MERT-MSE was evaluated for singing voice separation (GenSVS, top) and singing voice restoration (MSRBench, bottom). Models in the lower right corner indicate a better tradeoff. 
+          </h2>
+        </div>
         <div class="item has-text-centered">
           <img src="static/images/se2svs_results_table1_A4.png" alt="Results Table 1" style="width: 100%;">
           <h2 class="subtitle has-text-centered">
@@ -305,17 +313,40 @@ State-of-the-art speech enhancement (SE) models benefit from large-scale labeled
             Model parameter counts and complexity: total parameters (M), rel. added parameters compared to the base model, and model complexity measured with in GMACs/s.
           </h2>
         </div>
-        <div class="item has-text-centered">
-          <img src="static/images/se2svs_results_tradeoff_plot_A4.png" alt="Trade-off Plot" style="width: 100%;">
-          <h2 class="subtitle has-text-centered">
-            Tradeoff between MERT-MSE and PESQ evaluated for speech enhancement on the EARS-WHAM test set. MERT-MSE was evaluated for singing voice separation (GenSVS, top) and singing voice restoration (MSRBench, bottom). Models in the lower right corner indicate a better tradeoff. 
-          </h2>
-        </div>
       </div>
     </div>
   </div>
 </section>
 <!-- End image carousel -->
+
+
+<!-- References -->
+<section class="section" id="References">
+  <div class="container is-max-desktop content">
+    <h2 class="title">References</h2>
+    <div class="ieee-reference">
+      <div class="ieee-reference-number">[1]</div>
+      <div class="ieee-reference-text">P. A. Bereuter, B. Stahl, M. D. Plumbley, and A. Sontacchi, "Towards reliable objective evaluation metrics for generative singing voice separation models," in <i>Proc. WASPAA</i>, 2025. [Online]. Available: <a href="https://arxiv.org/abs/2504.02271" target="_blank">https://arxiv.org/abs/2504.02271</a>.</div>
+    </div>
+    <div class="ieee-reference">
+      <div class="ieee-reference-number">[2]</div>
+      <div class="ieee-reference-text">J. Yu, H. Chen, Y. Luo, R. Gu, and C. Weng, "High fidelity speech enhancement with band-split RNN," in <i>Interspeech 2023</i>, 2023, pp. 2483-2487. [Online]. Available: <a href="https://arxiv.org/pdf/2212.00406" target="_blank">https://arxiv.org/pdf/2212.00406</a>.</div>
+    </div>
+    <div class="ieee-reference">
+      <div class="ieee-reference-number">[3]</div>
+      <div class="ieee-reference-text">J. Richter, Y.-C. Wu, S. Krenn, S. Welker, B. Lay, S. Watanabe, A. Richard, and T. Gerkmann, "EARS: An anechoic fullband speech dataset benchmarked for speech enhancement and dereverberation," in <i>Proc. Interspeech</i>, 2024. [Online]. Available: <a href="https://arxiv.org/pdf/2406.06185" target="_blank">https://arxiv.org/pdf/2406.06185</a>.</div>
+    </div>
+    <!-- <div class="ieee-reference">
+      <div class="ieee-reference-number">[3]</div>
+      <div class="ieee-reference-text">J. Richter, S. Welker, J.-M. Lemercier, B. Lay, and T. Gerkmann, "Speech enhancement and dereverberation with diffusion-based generative models," <i>IEEE/ACM Trans. Audio, Speech, Lang. Process.</i>, vol. 31, pp. 2351-2364, 2023. [Online]. Available: <a href="https://arxiv.org/pdf/2208.05830" target="_blank">https://arxiv.org/pdf/2208.05830</a>.</div>
+    </div> -->
+    <div class="ieee-reference">
+      <div class="ieee-reference-number">[4]</div>
+      <div class="ieee-reference-text">Y. Zang, J. Hai, W. Ge, Q. Kong, Z. Dai, H. Wang, Y. Mitsufuji, and M. D. Plumbley, "MSRBench: A benchmarking dataset for music source restoration," 2025. [Online]. Available: <a href="https://arxiv.org/abs/2510.10995" target="_blank">https://arxiv.org/abs/2510.10995</a>.</div>
+    </div>
+
+  </div>
+</section>
 
 
 <!--BibTex citation -->
